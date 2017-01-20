@@ -1,0 +1,55 @@
+﻿@* Copyright © 2017 Dmitry Sikorsky. All rights reserved. *@
+@* Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information. *@
+@{ 
+  this.ViewBag.Title = "File Uploading With ASP.NET Core: What Options Do We Have?";
+}
+<h1>Let’s Upload Something!</h1>
+
+<h2>I’m an old-fashioned file uploader :-(</h2>
+<p>
+  I look and behave ugly, just look at me! (I will reload your page after a file is uploaded, sorry…) Also, I need a submit
+  button in order to send the selected file to a server:
+</p>
+<form id="form1" name="form1" action="/uploader" enctype="multipart/form-data" method="post">
+  <div class="field">
+    <input name="files" type="file" multiple />
+  </div>
+  <div class="buttons">
+    <button type="submit">Submit</button>
+  </div>
+</form>
+<p>Ok, you can use some JavaScript to get rid of the submit button and to send the file automatically when it is selected:</p>
+<form id="form2" name="form2" action="/uploader" enctype="multipart/form-data" method="post">
+  <div class="field">
+    <input name="files" type="file" multiple onchange="submitForm('form2');" />
+  </div>
+</form>
+<p>You can even apply some CSS, but the behavior will remain poor:</p>
+<form id="form3" name="form3" action="/uploader" enctype="multipart/form-data" method="post">
+  <div class="buttons">
+    <div class="upload-button">
+      <div class="label">Click me!</div>
+      <input name="files" type="file" size="1" multiple onchange="submitForm('form3');" />
+    </div>
+  </div>
+</form>
+<h2>I’m using an iframe</h2>
+<p>Your page will not be reloaded, but it is still a bit strange that an additional page is required:</p>
+<div class="iframe">
+  <iframe src="/home/iframe" frameborder="0" marginwidth="0" marginheight="0" width="400" height="200" scrolling="no"></iframe>
+</div>
+<h2>I’m a fancy JavaScript…</h2>
+<p>Everything is really good with this option, except the fact that it is not supported by the old browsers:</p>
+<form id="form4" name="form3" action="/uploader" enctype="multipart/form-data" method="post">
+  <div class="buttons">
+    <div class="upload-button">
+      <div class="label">Click me!</div>
+      <input id="files" name="files" type="file" size="1" multiple onchange="uploadFiles('files');" />
+    </div>
+  </div>
+</form>
+<h2>…and even drag-and-drop one!</h2>
+<p>This option is very similar to the previous one, but uses modern drag and drop feature:</p>
+<div id="dragAndDropArea" class="drag-and-drop-area">
+  Drag and drop a file into this area
+</div>
