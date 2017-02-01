@@ -1,4 +1,4 @@
-﻿# File Uploading with ASP.NET Core: What Options Do We Have
+﻿# File Uploading with ASP.NET Core: What Options Do We Have?
 This is a demo web application for the
 “[File Uploading with ASP.NET Core: What Options Do We Have?](http://sikorsky.pro/en/blog/file-uploading-with-aspnet-core-what-options-do-we-have)”
 post on the [Dmitry Sikorsky’s blog](http://sikorsky.pro/en/blog). It demonstrates the following ways of file uploading with an ASP.NET Core
