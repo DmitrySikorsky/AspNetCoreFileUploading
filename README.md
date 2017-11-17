@@ -15,3 +15,5 @@ The demo web application screenshot:
 
 ![Demo web application](http://sikorsky.pro/images/blog/2/github/1.png)
 *Demo web application*
+
+Updated to use .NET Core 2.0.
